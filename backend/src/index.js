@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -11,7 +13,7 @@ const server = http.Server(app);
 
 setupWebsocket(server);
 
-mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-kdxee.mongodb.net/week10?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGO_CONNECTION,, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
